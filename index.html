@@ -8,13 +8,13 @@
 
 <style>
 :root {
-  --base: #f3e3cc;
-  --accent: #c97b84;
-  --accent-light: #e8c7c8;
-  --text: #5a3d3b;
+  --base: #f4ebe5;
+  --accent: #907067;
+  --accent-light: #cfb7ae;
+  --text: #4a3735;
 }
 
-/* Fundo com vidro fosco forte */
+/* Fundo com vidro fosco */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -27,46 +27,31 @@ body::before {
   position: fixed;
   inset: 0;
   background: var(--base) url("https://i.pinimg.com/736x/ea/6e/66/ea6e6611e5fb5d2032010f5dac002e3f.jpg") center/cover no-repeat;
-  filter: blur(20px) brightness(1.18);
+  filter: blur(20px) brightness(1.1);
   transform: scale(1.18);
   z-index: -1;
 }
 
-/* Cards com vidro */
+/* Glass cards */
 .glass {
-  background: rgba(255,255,255,0.45);
-  backdrop-filter: blur(24px) saturate(180%) contrast(110%);
-  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.50);
+  backdrop-filter: blur(22px) saturate(170%) contrast(110%);
+  border: 1px solid rgba(255,255,255,0.45);
+  border-radius: 24px;
 }
 
-/* Fade suave */
+/* Fade */
 .fade { animation: fadeIn .8s ease forwards; opacity:0; }
-@keyframes fadeIn {
-  from { opacity:0; transform:translateY(20px); }
-  to { opacity:1; transform:translateY(0); }
-}
+@keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
 
-/* Scrollbar branca minimalista */
-::-webkit-scrollbar {
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.6);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
-}
+/* Scrollbar minimalista */
+::-webkit-scrollbar { height: 8px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.6); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
 
-/* Carrossel suave */
-.scroll-snap-x {
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-.snap-child {
-  scroll-snap-align: center;
-}
+/* Carrossel */
+.scroll-snap-x { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.snap-child { scroll-snap-align: center; }
 </style>
 </head>
 
@@ -75,10 +60,9 @@ body::before {
 <!-- HEADER -->
 <header class="text-center py-8 fade max-w-lg mx-auto">
 
-  <!-- LOGO SEM SHINE E SEM FLUTUAR -->
   <div class="w-28 h-28 mx-auto rounded-3xl shadow-lg">
     <img 
-      src="https://media.discordapp.net/attachments/1109665318521012264/1437634561801453578/340_Sem_Titulo_20251108015413.png?ex=6913f505&is=6912a385&hm=28390a8af38946c7516af1dc3ea447dc696d2160e31f5c1c009e81df01d712dd&=&format=webp&quality=lossless&width=662&height=662"
+      src="https://media.discordapp.net/attachments/1109665318521012264/1437634561801453578/340_Sem_Titulo_20251108015413.png?format=webp&quality=lossless"
       alt="Logo da loja"
       class="w-full h-full object-cover rounded-3xl"
     >
@@ -89,42 +73,37 @@ body::before {
 </header>
 
 <!-- CARD MAIOR -->
-<section class="max-w-lg mx-auto glass p-6 rounded-3xl shadow-xl fade space-y-6">
+<section class="max-w-lg mx-auto glass p-6 shadow-xl fade space-y-6">
 
   <h2 class="text-xl text-center font-semibold" style="color: var(--accent);">Cardápio</h2>
 
-  <!-- CARROSSEL COM BARRA BRANCA BONITA -->
   <div class="flex gap-4 overflow-x-auto scroll-snap-x pb-3">
 
-    <div class="min-w-[240px] glass rounded-3xl p-4 snap-child shadow-md">
+    <div class="min-w-[240px] glass p-4 snap-child shadow-md">
       <img src="https://i.pinimg.com/1200x/ad/27/6b/ad276bce8af9d8e73bd1704c40b3e4ff.jpg" class="w-full h-36 object-cover rounded-2xl shadow" alt="">
-      <h3 class="mt-3 font-semibold">Cubo Magico usado</h3>
-      <p class="text-sm opacity-80">Do pedro.</p>
+      <h3 class="mt-3 font-semibold">Cubo Mágico usado</h3>
+      <p class="text-sm opacity-80">Do Pedro.</p>
       <p class="mt-1 font-bold text-[var(--accent)]">R$ 4,00</p>
     </div>
 
-    <div class="min-w-[240px] glass rounded-3xl p-4 snap-child shadow-md">
+    <div class="min-w-[240px] glass p-4 snap-child shadow-md">
       <img src="https://i.imgur.com/aPpQw4s.jpeg" class="w-full h-36 object-cover rounded-2xl shadow" alt="">
       <h3 class="mt-3 font-semibold">Brigadeiro</h3>
-      <p class="text-sm opacity-80">muito BOm.</p>
+      <p class="text-sm opacity-80">Muito bom.</p>
       <p class="mt-1 font-bold text-[var(--accent)]">R$ 22,00</p>
     </div>
 
   </div>
 
-  <div class="glass p-4 rounded-3xl shadow-md text-center">
+  <div class="glass p-4 shadow-md text-center">
     <h3 class="text-xl font-semibold mb-3" style="color: var(--accent);">Encomendas</h3>
     <div class="space-y-3">
-      <a href="https://www.instagram.com/raison_d_etre_jp/" class="block px-5 py-3 rounded-2xl font-medium shadow-sm transition" style="background: var(--accent-light);">
-        Instagram
-      </a>
-      <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20fazer%20um%20pedido%20🍬" class="block px-5 py-3 rounded-2xl font-medium shadow-sm transition" style="background: var(--accent-light);">
-        WhatsApp
-      </a>
+      <a href="https://www.instagram.com/raison_d_etre_jp/" class="block px-5 py-3 rounded-2xl font-medium shadow-sm" style="background: var(--accent-light);">Instagram</a>
+      <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20fazer%20um%20pedido%20🍬" class="block px-5 py-3 rounded-2xl font-medium shadow-sm" style="background: var(--accent-light);">WhatsApp</a>
     </div>
   </div>
 
-  <footer class="glass p-4 rounded-3xl text-center shadow-sm text-xs opacity-80">
+  <footer class="glass p-4 text-center shadow-sm text-xs opacity-80">
     © 2025 Raison D'etre. Todos os direitos reservados.
   </footer>
 
